@@ -1,0 +1,48 @@
+.main-logo {
+  display: flex;
+  position: relative;
+  padding-bottom: 12.5px;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (min-width: $medium-width) {
+    display: flex;
+    margin-top: 24px;
+    min-width: 175px;
+  }
+
+  @media (min-width: $large-width) {
+    display: flex;
+    margin-top: 54px;
+    min-width: 202px;
+  }
+}
+
+.main-logo__icon {
+  display: block;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $medium-width) {
+    padding-left: 0;
+    padding-right: 12px;
+  }
+}
+
+.main-logo__icon-image {
+  @media (min-width: $medium-width) {
+    min-width: 61px;
+  }
+
+  @media (min-width: $large-width) {
+    min-width: 71px;
+  }
+}

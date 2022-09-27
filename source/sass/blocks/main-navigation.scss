@@ -1,0 +1,230 @@
+.main-navigation {
+  position: relative;
+
+  @media (max-width: $small-width-only) {
+
+  }
+}
+
+.main-navigation__toggle {
+  position: absolute;
+  top: -107px;
+  right: 11px;
+  z-index: 11;
+  display: block;
+  width: 42px;
+  height: 48px;
+  background-color: inherit;
+  cursor: pointer;
+  border: none;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  &:hover,
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (min-width: $medium-width) {
+    display: none;
+  }
+}
+
+.main-navigation--closed .main-navigation__toggle-btn {
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 4px;
+  vertical-align: bottom;
+  background: $button;
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: -16px;
+    height: 4px;
+    background: $button;
+    transform-origin: 50% 50%;
+    transition: bottom 0.3s 0.3s, transform 0.3s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    top: -8px;
+    background: $button;
+    transform-origin: 50% 50%;
+    transition: bottom 0.3s 0.3s, transform 0.3s;
+  }
+}
+
+.main-navigation--opened .main-navigation__toggle-btn {
+  background: 0 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    width: 26px;
+    top: 20px;
+    height: 4px;
+    background: $white-color;
+    transform-origin: 50% 50%;
+    transform: rotate3d(0, 0, 1, 45deg);
+    transition: bottom 0.3s 0.3s, transform 0.3s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    width: 26px;
+    height: 4px;
+    top: 20px;
+    background: $white-color;
+    transform-origin: 50% 50%;
+    transform: rotate3d(0, 0, 1, -45deg);
+    transition: bottom 0.3s 0.3s, transform 0.3s;
+  }
+}
+
+.main-navigation__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: $button;
+
+  @media (min-width: $medium-width) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: $small-width-only) {
+  .main-navigation--closed .main-navigation__item {
+    display: none;
+  }
+
+  .main-navigation--nojs .main-navigation__toggle {
+    display: none;
+  }
+
+  .main-navigation--opened .main-navigation__list {
+    position: absolute;
+    top: -113px;
+    right: 0;
+    z-index: 10;
+    width: 100vw;
+    background-color: $button;
+  }
+
+  .main-navigation--nojs .main-navigation__list {
+    position: static;
+    min-height: 0;
+  }
+
+  .main-navigation--nojs .main-navigation__item {
+    display: block;
+    position: relative;
+    top: -113px;
+  }
+}
+
+.main-navigation__item {
+  position: relative;
+  padding: 17px;
+  padding-bottom: 13px;
+  text-align: center;
+  font-family: "Oswald", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: $black-color;
+  overflow: hidden;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (max-width: $small-width-only) {
+    &:first-child{
+      box-shadow: 0px 0px 0px rgba(1, 1, 1, 0.2);
+    }
+
+    &:not(:first-child) {
+      box-shadow: 0px -1px 0px rgba(1, 1, 1, 0.2), inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+    }
+
+    &:last-child::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 7px;
+      min-width: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+    }
+  }
+
+  @media (min-width: $medium-width) {
+    display: inline-block;
+    padding: 42px 34px 75px 0;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  @media (min-width: $large-width) {
+    display: inline-block;
+    padding: 69px 35px 88px 0;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+  }
+}
+
+.main-navigation__link {
+  color: $white-color;
+  text-decoration: none;
+
+
+  @media (min-width: $large-width) {
+    color: $white-color;
+  }
+}
+
+.main-navigation__link--inner {
+  @media (min-width: $large-width) {
+    color: $black-color;
+  }
+}
+
+.main-navigation__link--active {
+  @media (min-width: $medium-width) {
+    position: relative;
+  }
+}
+
+.main-navigation__link--active--inner {
+  //
+}
