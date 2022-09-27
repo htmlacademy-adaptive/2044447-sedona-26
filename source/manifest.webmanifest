@@ -1,0 +1,7 @@
+{
+  "name": "sedona",
+  "short_name": "sedona",
+  "icons": [
+    { "src": "img/favicon/512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
